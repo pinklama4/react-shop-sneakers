@@ -1,75 +1,41 @@
+import Card from './components/Card'
+import  Header from './components/Header'
+import  Draver from './components/Draver'
 
 
+const arr = [
+    {title: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 12250, imageURL:'/img/sneakers/1.svg'},
+    {title: 'Мужские Кроссовки Nike Air Max 270', price: 22000, imageURL:'/img/sneakers/2.svg'},
+    {title: 'Мужские Кроссовки Nike Blazer Mid Suede', price: 13650, imageURL:'/img/sneakers/3.svg'},
+    {title: 'Кроссовки Puma X Aka Boku Future Rider', price: 21220, imageURL:'/img/sneakers/4.svg'},
+
+];
 
 function App() {
   return (
     <div className="wrapper">
-      <header>
-          <div className="headerLeft">
-              <img width={40} height={40} src="/img/logo.png"/>
-              <div className="headerInfo">
-                  <h3>REACT SNEAKERS</h3>
-                  <p>Магазин лучших кроссовок</p>
-              </div>
-          </div>
-          <ul className="headerRight">
-              <li><img width={18} height={18} src="/img/cart.svg"/> <span>1205 руб.</span></li>
-              <li><img width={18} height={18} src="/img/prof.svg"/></li>
-          </ul>
-      </header>
-        <div className="content">
-            <h1>Все кроссовки</h1>
+        <Draver/>
+        <Header />
 
-            <div className="sneakers">
-                <div className="card">
-                    <img className="photo-sneakers" width={133} height={112} src="/img/sneakers/sneakers-photo.svg" alt=""/>
-                    <p className="name-sneakers">Мужские Кроссовки Nike Blazer Mid Suede</p>
-                    <div className="card-title">
-                        <div>
-                            <p>Цена:</p>
-                            <b>11 111 руб.</b>
-                        </div>
-                        <button>
-                            <img width={11} height={11} src="/img/add-cart.svg"/>
-                        </button>
-                    </div>
-                </div><div className="card">
-                <img className="photo-sneakers" width={133} height={112} src="/img/sneakers/sneakers-photo.svg" alt=""/>
-                <p className="name-sneakers">Мужские Кроссовки Nike Blazer Mid Suede</p>
-                <div className="card-title">
-                    <div>
-                        <p>Цена:</p>
-                        <b>11 111 руб.</b>
-                    </div>
-                    <button>
-                        <img width={11} height={11} src="/img/add-cart.svg"/>
-                    </button>
-                </div>
-            </div><div className="card">
-                <img className="photo-sneakers" width={133} height={112} src="/img/sneakers/sneakers-photo.svg" alt=""/>
-                <p className="name-sneakers">Мужские Кроссовки Nike Blazer Mid Suede</p>
-                <div className="card-title">
-                    <div>
-                        <p>Цена:</p>
-                        <b>11 111 руб.</b>
-                    </div>
-                    <button>
-                        <img width={11} height={11} src="/img/add-cart.svg"/>
-                    </button>
-                </div>
-            </div><div className="card">
-                <img className="photo-sneakers" width={133} height={112} src="/img/sneakers/sneakers-photo.svg" alt=""/>
-                <p className="name-sneakers">Мужские Кроссовки Nike Blazer Mid Suede</p>
-                <div className="card-title">
-                    <div>
-                        <p>Цена:</p>
-                        <b>11 111 руб.</b>
-                    </div>
-                    <button>
-                        <img width={11} height={11} src="/img/add-cart.svg"/>
-                    </button>
+        <div className="content">
+            <div className="info-content">
+                <h1>Все кроссовки</h1>
+                <div className="search-block">
+                    <img src="img/search.svg" alt="Search"/>
+                    <input placeholder="Поиск..."/>
                 </div>
             </div>
+
+            <div className="sneakers">
+
+                {arr.map((obj) =>(
+                    <Card
+                        title={obj.title}
+                        price={obj.price}
+                        imageURL={obj.imageURL}
+                    />
+                ))}
+
             </div>
         </div>
     </div>
