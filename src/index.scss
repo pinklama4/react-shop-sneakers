@@ -54,6 +54,10 @@ body {
       align-items: center;
       text-align: center;
     }
+
+    .headerRight li:nth-of-type(1) {
+      cursor: pointer;
+    }
   }
    ul {
      list-style-type: none;
@@ -80,6 +84,15 @@ body {
   padding: 20px;
   margin-top: 40px;
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  .button-card-plus {
+    cursor: pointer;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 2;
+    }
+  }
 
   .photo-sneakers {
     margin-left: 30px;
@@ -123,14 +136,6 @@ body {
     }
   }
 
-  button {
-    background: #FFFFFF;
-    border: 1px solid #F2F2F2;
-    border-radius: 8px;
-    cursor: pointer;
-    height: 32px;
-    width: 32px;
-  }
 }
 
 .info-content {
@@ -160,7 +165,7 @@ body {
 }
 
 .overlay-hidden {
-  display: none;
+
 }
 
 .overlay {
@@ -289,4 +294,13 @@ body {
   line-height: 19px;
 
   color: #FFFFFF;
+}
+
+.btnCart {
+  cursor: pointer;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
 }
